@@ -46,7 +46,7 @@ else:
     os.makedirs("ExcelSheets")
     for sheet in ["SCR_GeoCode_DeprivationFraction.xlsx","SCR_LSOA_Estimates.xlsx","SCR_LSOA_Workplace_Totals.xlsx","SCR_LSOAConversions.xlsx","SCR_MSOA_Workplace_Data_Split.xlsx"]:
         os.rename(sheet,str("ExcelSheets/"+sheet))
-    
+exec(open("JobToColumnFinder.py").read())  
 conversion_file = "ExcelSheets/SCR_LSOA_Estimates.xlsx"
 wb = opxl.load_workbook(conversion_file, read_only = True)
 
