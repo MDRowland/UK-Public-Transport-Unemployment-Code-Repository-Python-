@@ -92,7 +92,7 @@ if os.path.exists('Output Files/'+str(Places)+'/'+str(Places)+"_CTN"):
     pass
 else:
     os.makedirs('Output Files/'+str(Places)+'/'+str(Places)+"_CTN")
-print("Starting")
+print("Starting Djikstras' Algorithm ...")
 while k < (int(len(Nodes))):                                       # While loop to generate and save the MST of each node in question, in this case all of them.
                    
     source = Nodes[k][0]
