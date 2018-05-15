@@ -1,4 +1,5 @@
 import openpyxl as opxl
+import os, zipfile
 ####################################
 ####### Generic Functions ##########
 def file_len(fname):              ##
@@ -11,6 +12,45 @@ def file_len(fname):              ##
 conversion_file = "ExcelSheets/SCR_LSOA_Estimates.xlsx"
 wb = opxl.load_workbook(conversion_file, read_only = True)
 print('Performing first-time setup.')
+if os.path.exists("Output Files"):
+    pass
+else:
+    print("Generating Directory Structure")
+    os.makedirs("Output Files")
+
+if os.path.exists("Programme Files"):
+    pass
+else:
+    os.makedirs("Programme Files")
+    f = open("Programme Files/z.txt")
+    f.write("0 0")
+    f.close()
+    f = open("Programme Files/CostCoefficients.txt")
+    f.write("{'Time': [0, 1, 0, 0, 0, 0], 'Disabled': [0.1, 1, 0, 0.3, 0.1, 0.3], 'Time + Living Wage': [459.77, 1, 0, 0, 0, 0], 'Cycling': [0, 0, 1, 0, 0, 0]}")
+    f.close()
+    f = open("Programme Files/CostCoefficients_MetaData.txt")
+    f.write("Name Cost_Coefficent Time_Coefficent Distance_Coefficent Changes_malus walking_time_malus walking_distance_malus")
+    f.close()
+    f = open("Programme Files/MaxCost.txt")
+    f.write("{'Twenty Minutes': 1200, 'One Hour': 3600, 'Ten Miles': '16000'}")
+    f.close()
+    f = open("Programme Files/TargetJobCodes.txt")
+    f.write("[927,622,613,923,711,624,924,543,913,911]")
+    f.close()
+if os.path.exists("Locality Files"):
+    pass
+else:
+    os.makedirs("Locality Files")   
+if os.path.exists("ExcelSheets"):
+    pass
+else:
+    os.makedirs("ExcelSheets")   
+    zip_ref = zipfile.ZipFile("ExcelSheets.7z", 'r')
+    zip_ref.extractall("ExcelSheets")
+    zip_ref.close()
+    
+
+
 
 print("Identifying numbers of LSOAs and MSOAs.")
 LSOA_dictionary = {}
@@ -39,3 +79,4 @@ print('LSOAs counted.')
     
 
 print('Setup complete!')
+
