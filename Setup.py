@@ -44,7 +44,7 @@ if os.path.exists("ExcelSheets"):
     pass
 else:
     os.makedirs("ExcelSheets")
-    for sheet in ["SCR_GeoCode_DeprivationFraction","SCR_LSOA_Estimates","SCR_LSOA_Workplace_Totals","SCR_LSOAConversions","SCR_MSOA_Workplace_Data_Split"]:
+    for sheet in ["SCR_GeoCode_DeprivationFraction.xlsx","SCR_LSOA_Estimates.xlsx","SCR_LSOA_Workplace_Totals.xlsx","SCR_LSOAConversions.xlsx","SCR_MSOA_Workplace_Data_Split.xlsx"]:
         os.rename(sheet,str("ExcelSheets/"+sheet))
     
 conversion_file = "ExcelSheets/SCR_LSOA_Estimates.xlsx"
