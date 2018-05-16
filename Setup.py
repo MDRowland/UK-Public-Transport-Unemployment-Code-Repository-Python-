@@ -21,18 +21,33 @@ if os.path.exists("Programme Files"):
     pass
 else:
     os.makedirs("Programme Files")
+if os.path.exists("Programme Files/z.txt"):
+    pass
+else:
     f = open("Programme Files/z.txt", "w")
     f.write("0 0")
     f.close()
+if os.path.exists("Programme Files/CostCoefficients.txt"):
+    pass
+else:
     f = open("Programme Files/CostCoefficients.txt", "w")
     f.write("{'Time': [0, 1, 0, 0, 0, 0], 'Disabled': [0.1, 1, 0, 0.3, 0.1, 0.3], 'Time + Living Wage': [459.77, 1, 0, 0, 0, 0], 'Cycling': [0, 0, 1, 0, 0, 0]}")
     f.close()
+if os.path.exists("Programme Files/CostCoefficients_MetaData.txt"):
+    pass
+else:
     f = open("Programme Files/CostCoefficients_MetaData.txt", "w")
     f.write("Name Cost_Coefficent Time_Coefficent Distance_Coefficent Changes_malus walking_time_malus walking_distance_malus")
     f.close()
+if os.path.exists("Programme Files/MaxCost.txt"):
+    pass
+else:
     f = open("Programme Files/MaxCost.txt", "w")
     f.write("{'Twenty Minutes': 1200, 'One Hour': 3600, 'Ten Miles': '16000'}")
     f.close()
+if os.path.exists("Programme Files/TargetJobCodes.txt"):
+    pass
+else:
     f = open("Programme Files/TargetJobCodes.txt", "w")
     f.write("[927,622,613,923,711,624,924,543,913,911]")
     f.close()
